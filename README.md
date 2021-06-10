@@ -1,9 +1,10 @@
 # toDoList
-Mini web app de lista de tareas.
+Mini web app de lista de tareas para practicar la manipulación y manejo del DOM con JS.
 
 Tecnologias:
  1. HTML.
  2. CSS. 
- 3. JAVASCRIPT. 
+ 3. JAVASCRIPT.
+
  
- GitPage: 
+ GitHubPage: https://gaby07dev.github.io/toDoList/
