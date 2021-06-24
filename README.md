@@ -7,4 +7,4 @@ Tecnologias:
  3. JAVASCRIPT.
 
  
- GitHubPage: https://gaby07dev.github.io/toDoList/
+ GitHubPage: https://gabygramajo.github.io/toDoList/
