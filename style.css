@@ -1,8 +1,12 @@
-/* ESTILOS GENERALES */
+/* ------------ Fonts ------------ */
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@300;700&display=swap');
+
+
+/* ------------ ESTILOS GENERALES ------------ */
 html {
     box-sizing: border-box;
     font-size: 14px;
-/*     height: 100%; */
+    height: 100%;
   }
 *, *:before, *:after {
     box-sizing: inherit;
@@ -12,38 +16,36 @@ html {
     padding: 0;
 }
 
+body{
+    background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    height: 100%;
+}
 .done {
     text-decoration: line-through;
 }
-body{
-    background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-/*     height: 100%; */
-    min-height: 100vh;
-}
 
-/* CONTENEDOR */
+/* ------------ CONTENEDOR ------------ */
 .contenedor{
     width: 100%;
-/*     height: 100%; */
-    min-height: 100vh;
-    padding-bottom: 2px;
+    height: 100vh;
+    padding: 0 10px 5px;
     text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-    background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+    font-family: 'Urbanist', sans-serif;
+    background-color: #297F87;
+    border: 1px solid #F6D167;
+    /* display: flex;
+    flex-wrap: wrap; */
+    justify-content: center;
+    overflow: hidden;
 }
-@media (min-width: 500px) { /*Desktop y tablet*/
-    html{
-        font-size: 17px;
-    }
-    .contenedor{
-        width: 400px;
-        height: auto;  
-        margin: 0 auto;
-        margin-top: 20px; 
-        box-shadow: 0 0 5px #000;
-    }
+header,
+div.pantalla,
+ul,
+div.content-btn{
+    width: 100%;
 }
-/* header */
+
+/* ------------ header ------------ */
 header {
     height: 50px;
     display: flex;
@@ -61,7 +63,7 @@ h1{
     border-bottom: 1px solid #fff;
 }
 
-/* Pantalla */
+/* ------------ Pantalla ------------ */
 .pantalla {
     display: flex;
     justify-content: center;
@@ -76,7 +78,7 @@ h1{
     height: 35px;
     font-size: 1.3rem;
     padding-left: 5px;
-    border-color: #8ec5fc;
+    border-color: #FFF7AE;
     color: rgb(24, 22, 22);
 }
 #userInput:focus {
@@ -86,35 +88,41 @@ h1{
 #enter {
     display: block;
     margin-left: 5px;
-    
+    cursor: pointer;
     width: 10%;
     height: 35px;
     font-size: 1.3rem;
     font-weight: bold;
-    color: #fff;
-    background-image: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
-    border: 1px solid #fff;
+    color: #5c5a5a;
+    background-color: #FFF7AE;
+    /* background-image: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%); */
+    border: 2px solid #F6D167;
 }
 
 #enter:active{
     color: #8ec5fc;
     border-color: #8ec5fc;
 }
-/* Cuerpo de la Lista*/
+/* ------------ Cuerpo de la Lista ------------ */
 ul {
-    /* background-color: #f1f1f1; */
-    /* list-style: decimal; */
     list-style: none;
-    min-height: 475px;
+    min-height: 450px;
+    height: 75%;
+    margin-bottom: 5px;
     padding: 20px 10px 0 10px;
     text-align: left;
+    background-color: #FFF7AE;
+    border-top: 1px solid #F6D167;
+    border-bottom: 1px solid #F6D167;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    overflow-y: scroll;
 }
 
 li{
-    text-transform: capitalize;
     padding: 5px;
     margin-bottom: 10px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.603);
+    border-bottom: 1px solid #F6D167;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -125,11 +133,15 @@ li{
     margin-right: 15px;
     display: inline-block;
     transform: scale(1.7);
+    cursor: pointer;
+    position: absolute;
+    left: 5px;
 } 
 
-span {
-    color: rgb(24, 22, 22);
-    font-size: 1.1rem;
+.text {
+    color: #000;
+    font-size: 1.5rem;
+    font-weight: 300;
     text-decoration: inherit;
     text-align: left;
     display: inline-block;
@@ -142,10 +154,11 @@ span {
     margin-bottom: 10px;
     margin-left: 10px;
     position: absolute;
-    left: 90%;
+    left: 88%;
     text-transform: uppercase;
     background-color: rgb(223, 41, 41);
     color: #fff;
+    cursor: pointer;
     width: 30px;
     height: 30px;
     border: 1px solid rgb(223, 41, 41);
@@ -154,5 +167,49 @@ span {
 .btn-del:active{
     background-color: rgb(168, 5, 5);
 }
+/* ------------  btn clear ------------ */
 
+.content-btn button{
+    padding: 5px 10px;
+    font-family: 'Urbanist', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border-radius: 30px;
+    cursor: pointer;
+}
 
+#clear{
+    margin-right: 10px;
+    color: #F6D167;
+    background-color: rgba(223, 46, 46);
+    border: 2px solid #F6D167;
+}
+#clearDone{
+    color: #F6D167;
+    background-color: rgb(20, 182, 114);
+    border: 2px solid #F6D167;
+}
+#clear:active{
+    background-color: rgba(223, 46, 46, .6);
+}
+#clearDone:active{
+    background-color: rgb(20, 182, 114, .6);
+
+}
+/* ------------ Desktop y tablet ------------ */
+@media (min-width: 500px) { 
+    
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .contenedor{
+        width: 400px;
+        height: 85vh;
+        max-height: 800px;  
+        margin: 0 auto;
+        border-radius: 10px;
+        box-shadow: 0 0 5px #000;
+    }
+}

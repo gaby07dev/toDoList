@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document object model</title>
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    <title>ToDo List</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -15,16 +16,28 @@
        
         <div class="pantalla">
             <input id="userInput" type="text" placeholder="Agregar a la lista">
-            <button id="enter"> > </button>
+            <button id="enter"> + </button>
         </div>
         
         <ul>
-            <li><input type="checkbox" class="checkbox"><span class="text">ejemplo 1</span><button class="btn-del">X</button></li>
+            <li>
+                <input type="checkbox" class="checkbox">
+                <span class="text">Ejemplo 1</span>
+                <button class="btn-del">X</button>
+            </li>
             
-            <li class="done"><input type="checkbox" checked class="checkbox"><span class="text">ejemplo 2</span><button class="btn-del">X</button></li>
+            <li class="done">
+                <input type="checkbox" checked class="checkbox">
+                <span class="text">Ejemplo 2</span>
+                <button class="btn-del">X</button>
+            </li>
             
         </ul>
+        <div class="content-btn">
+            <button id="clear">Borrar todo</button>
+            <button id="clearDone">Borrar completados</button>
+        </div>
     </div>
-    <script src="DOM-Events.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
