@@ -1,6 +1,6 @@
-let btn = document.getElementById("enter");
-let input = document.getElementById("userInput");
-let ul = document.querySelector("ul");
+const btn = document.getElementById("enter");
+const input = document.getElementById("userInput");
+const ul = document.querySelector("ul");
 
 
 // TODO: returna la longitud del item.
@@ -15,10 +15,10 @@ function returnItem(item){
 
 // TODO: Crea el elemento con el item ingresado.
 function createListElement(){
-    let li = document.createElement('li');
-    let btn_del = document.createElement('button'); 
-    let check = document.createElement('input');
-    let span = document.createElement('span');
+    const li = document.createElement('li');
+    const btn_del = document.createElement('button'); 
+    const check = document.createElement('input');
+    const span = document.createElement('span');
     // createElement crea un elemento HTML.
 
     check.type = "checkbox"; // creando un checkbox
@@ -67,25 +67,32 @@ function capturarElemento(item){
 }
 // TODO: Limpia la lista.
 function clearAll(){
-    if( document.querySelectorAll("li").length 
-        && 
-        window.confirm("Se borrarán todos los item de la lista ¿Continuar?")
-    ){
-        document.querySelector("ul").innerHTML = "";
-    }
+    confirmationAlert("Se borrarán todos los items de la lista. ¿Continuar?", "clear");
 }
 // TODO: Limpia los item completados.
 function clearDone(){
-    const ItemsDone = document.querySelectorAll(".done");
-    if( ItemsDone.length    
-        && 
-        window.confirm("Se borrarán todos los item completados de la lista ¿Continuar?")
-    ){
-        ItemsDone.forEach((item) => item.remove());
-    }
-    
+    confirmationAlert("Se borrarán todos los items de la lista que estén compleados. ¿Continuar?", "clearDone");
 }
- 
+
+// TODO: popup para confirmar acción de borrar items completados o todo.
+function confirmationAlert(message, action) {
+    alertify.confirm('Confirmar acción', message, 
+    function(){ 
+        if( action === "clearDone"){
+            const ItemsDone = document.querySelectorAll(".done");
+            ItemsDone.forEach((item) => item.remove());
+        }
+        if( action === "clear"){
+            document.querySelector("ul").innerHTML = "";
+        }
+        alertify.success('Ok'); 
+        }
+    , function(){ 
+            alertify.error('Cancel')
+    });
+}
+
+
 // addEventListener sirve para escuchar los eventos que suceden dentro del DOM.
 // addEventListener( evento , funcipon) {} 
 
