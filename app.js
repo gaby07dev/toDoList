@@ -71,7 +71,7 @@ function clearAll(){
 }
 // TODO: Limpia los item completados.
 function clearDone(){
-    confirmationAlert("Se borrarán todos los items de la lista que estén compleados. ¿Continuar?", "clearDone");
+    confirmationAlert("Se borrarán todos los items de la lista que estén completados. ¿Continuar?", "clearDone");
 }
 
 // TODO: popup para confirmar acción de borrar items completados o todo.
